@@ -12,4 +12,5 @@ jobs:
         run: docker build ./api/ -t eddyachie1/devops-qr-code-api:latest
       - name: push image to docker Hub
         run: |
+          docker login -u eddyachie1 -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push eddyachie1/devops-qr-code-api:latest    
